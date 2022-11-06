@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 3000; // port番号を指定
 
-app.get('/helloWorld', (req, res) => {
-    res.status(200).send({ message: 'hello, world' });
-});
+// ------ ルーティング ------ //
+const router = require('./routes/');
+app.use('/', router);
 
 //サーバ起動
 app.listen(port);
